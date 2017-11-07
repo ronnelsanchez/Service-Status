@@ -1,0 +1,376 @@
+.banner {
+  background: #000000;
+  background-image: url(/assets/images/banner.png);
+  height: 300px;
+  display: block;
+  background-position: 0 -110px;
+  position: relative;
+  &.banner-sm {
+    height: 200px;
+
+    .search {
+      .container {
+        top: 50%;
+        .welcome{
+          display: none;
+        }
+      }
+    }
+  }
+  .search {
+    text-align: center;
+    color: #ffffff;
+    .container{
+      position: absolute;
+      top: 30%;
+      width: 100%;
+    }
+  }
+}
+
+.section{
+  border-bottom: 1px solid #dddddd;
+  &.section:last-child{
+    border-bottom:0;
+  }
+}
+
+
+.status {
+  &.status-header {
+    display: inline-block;
+    color: #ffffff;
+    margin: 10px 0;
+    margin-left: 15px;
+    ul{
+      margin: 0;
+      padding: 5px 0 5px 10px;
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+      li{
+        span{
+          font-size: 12px;
+          i{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  &.status-row {
+    margin: 40 0 20px 0;
+    position: relative;
+
+    .status-title {
+      display: inline-block;
+      margin: 10px 0;
+    }
+    .status-list{
+      display: inline-block;
+      width: 100%;
+    }
+    .side-button{
+      position: absolute;
+      float: right;
+      right: 0;
+      bottom: 0;
+
+      .view-all{
+        margin-top: 25px;
+        margin: 10px 0;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+
+.quick-tag{
+  margin: 15px 0;
+
+  .category,.service{
+    padding: 5px 0;
+    span{
+      text-transform: uppercase;
+      font-weight: 600;
+      color:$gray-light;
+      font-size: 12px;
+      letter-spacing: 1px;
+      width: 100px;
+      display: inline-block;
+      margin: 15px 20px 15px 0;
+
+    }
+
+    .tag-list {
+      display: inline-block;
+      margin-bottom: 0;
+
+      .tag{
+        &.first{
+          margin-right: 15px;
+        }
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+
+      .btn-tag{
+        border-radius: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        :active,
+        &.active,{
+          box-shadow: none!important;
+          position: relative;
+
+          &.related {
+            &:after{
+              content: '';
+            }
+          }
+
+          &:after {
+            content: "\f057";
+            font-family: FontAwesome;
+            position: absolute;
+            right: 10px;
+
+          }
+        }
+      }
+    }
+  }
+  .service {
+    border-top: 1px solid $gray-lighter;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  @include box-shadow (0 1px 6px rgba(32, 33, 36, 0.28));
+
+  &:hover{
+    @include box-shadow (0 4px 10px rgba(0, 0, 0, 0.24));
+  }
+  &:active,
+  &:focus,
+  &:active:focus{
+    @include box-shadow (0 0px 2px rgba(32, 33, 36, 0.38));
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+  }
+
+  .site {
+    text-align: center;
+    padding: 15px;
+    .title{
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .sub-title{
+      color: $gray;
+      position: relative;
+      text-align: center;
+      margin-top: 15px;
+      display: inline-block;
+      &:before{
+        position: absolute;
+        width: 100%;
+        content:'---------';
+        color: $gray-lighter;
+        top:-20px;
+        font-weight: bold;
+        letter-spacing: -1px;
+        left: 0;
+      }
+    }
+
+  }
+
+  .details {
+    border-radius: 0 0 4px 4px;
+    padding: 15px;
+    background: #f5f5f5;
+    display: inline-block;
+    width: 100%;
+
+    .status {
+      float: left;
+    }
+
+    .response {
+      float: right;
+    }
+
+    .title {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $gray-light;
+      font-size: 10px;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .value {
+      display: block;
+    }
+
+
+  }
+}
+
+
+.side-button{
+  position: absolute;
+  right: 30px;
+  .btn-subscribe {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    &.active,
+    &:active {
+      box-shadow: none !important;
+      background-color: #ffffff;
+      border-color: #cccccc;
+      &:after {
+        content: "\f0f3";
+        color: $brand-primary;
+      }
+    }
+    &:after {
+      content: "\f0a2";
+      font-family: FontAwesome;
+      position: absolute;
+      font-size: 16px;
+      width: 20px;
+      height: 20px;
+      left: 4px;
+      top: 2px;
+    }
+  }
+}
+
+
+.services {
+  .services-list {
+    background: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 30px 0;
+
+    .result {
+      padding: 15px;
+      border-bottom: 1px solid $gray-lighter;
+
+      &:first-child{
+        border-radius: 6px 6px 0 0;
+      }
+
+      &:last-child{
+        border: 0;
+        border-radius: 0 0 6px 6px;
+      }
+
+      &:hover{
+        background-color: $gray-lightest;
+      }
+
+      .site{
+        margin-bottom: 15px;
+        padding-right: 100px;
+        .title {
+          font-size: 16px;
+          font-weight: 600;
+          margin: 5px 0;
+        }
+        .sub-title{
+          color: $gray;
+        }
+      }
+
+      .details {
+        font-size: 12px;
+        display: inline-block;
+        .status,.response{
+          display: inline-block;
+          .value {
+            i{
+              padding-right: 5px;
+            }
+          }
+        }
+        .response{
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}
+
+.service-page {
+  margin: 60px 0;
+  .service-title-row{
+    position: relative;
+
+    .service-category {
+      display: inline-block;
+    }
+    .side-button {
+      top: 0;
+    }
+  }
+  .site{
+    margin: 30px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #cccccc;
+    .title{
+      font-weight: 600;
+    }
+    .sub-title{
+      font-size: 21px;
+      color: $gray;
+      font-weight: 600;
+
+    }
+  }
+  .details {
+    display: inline-block;
+    width: 100%;
+    .status,.response {
+      display: inline-block;
+    }
+    .response {
+      margin-left: 60px;
+    }
+    .title {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $gray-light;
+      font-size: 10px;
+      letter-spacing: 1px;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    .value {
+      display: block;
+      font-size: 21px;
+    }
+  }
+}
+
+.btn-request {
+  margin: 5px 0;
+}
+
+.navbar-brand {
+  margin-left: 15px !important;
+}

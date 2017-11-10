@@ -14,13 +14,17 @@
     var $categoryTagService = $serviceTag.find('a');
 
     $serviceTag.hide();
+    $categoryTagBtn.on('click', makeActive);
     $categoryTagBtn.on('click', showServiceTag);
+    $categoryTagService.on('click', makeActive);
     $categoryTagAll.on('click', selectAllCat);
     $serviceTagAll.on('click', selectAllService);
 
+    function makeActive(){
+        $(this).toggleClass('active');
+    }
 
     function showServiceTag() {
-        $(this).toggleClass('active');
         var $categoryTitle = $(this).data().category;
         isEmptyServiceTag($(this));
         if (isEmptyServiceTag($(this))) {
@@ -40,11 +44,19 @@
     };
 
     function selectAllCat() {
-        $categoryTagBtn.trigger('click');
+        $categoryTagBtn.each(function() {
+            if (!$(this).hasClass('active')) {
+                $(this).trigger('click');
+            }
+        });
     }
 
     function selectAllService() {
-        $categoryTagService.toggleClass('active');
+        $categoryTagService.each(function() {
+            if (!$(this).hasClass('active')) {
+                $categoryTagService.addClass('active');
+            }
+        });
     }
 
     function isEmptyServiceTag($el) {

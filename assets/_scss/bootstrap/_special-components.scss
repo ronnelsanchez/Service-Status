@@ -1,12 +1,35 @@
 .banner {
-  background: #273744;
-  background-image: url('../images/bg.jpg');
   height: 300px;
   display: block;
-  background-position: center top;
   position: relative;
-  background-attachment: fixed;
-  background-repeat-y: no-repeat;
+  text-shadow: 0px 2px 7px #676767;
+
+
+  &.morning {
+    background: #6da5d4;
+    background-image: url('../images/bg-morning.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+  }
+
+  &.afternoon {
+    background: #f09a87;
+    background-image: url('../images/bg-afternoon.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+  }
+
+  &.evening {
+    background: #362746;
+    background-image: url('../images/bg-evening.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+  }
+
+
   &.banner-sm {
     height: 200px;
 
